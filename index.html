@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Image Spotlight Effect</title>
+</head>
+<body>
+    <div class="spotlight"></div>
+    <!-- <h2 class="title">Move the mouse to spot the light</h2> -->
+    
+    <script>
+        var focusedCard = document.querySelector('.spotlight');
+
+        window.addEventListener('mousemove', e => {
+
+            /* Get mouse page coordinates */
+            var percentageX = e.pageX / window.innerWidth * 100;
+            var percentageY = e.pageY / window.innerHeight * 100;
+
+            /* Center the background spotlight on mouse coordinates */
+            focusedCard.style.backgroundImage = `radial-gradient(circle at ${percentageX}% ${percentageY}%, transparent 80px, rgba(0,0,0,0.75) 140px`
+        })
+    </script>
+</body>
+</html>
